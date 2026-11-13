@@ -1,12 +1,55 @@
-# React + Vite
+# NZ Trails Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NZ Trails Explorer is a React app for browsing hiking trails in New Zealand. It displays trail routes on an interactive map and lets you search and filter trails by name, difficulty, and length. Selecting a trail shows its details, an elevation chart when elevation data is available, and current weather.
 
-Currently, two official plugins are available:
+Trail information is loaded from the bundled GeoJSON file at `public/assets/nz-full-named-trails.geojson`. The app currently loads up to 300 trails.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
 
-## Expanding the ESLint configuration
+- Node.js and npm
+- A Google Maps Elevation API key for live elevation data
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+1. Clone the repository and enter the project directory:
+
+   ```sh
+   git clone https://github.com/aryalram/NZ-trails-app.git
+   cd NZ-trails-app
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Create a `.env` file in the project root and add your Google Elevation API key:
+
+   ```env
+   VITE_GOOGLE_API_KEY=your_google_elevation_api_key
+   ```
+
+   Enable the Elevation API for the key and restrict it to the app's required API and development/production referrers. The `.env` file is ignored by Git; do not commit API keys.
+
+4. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+   Open the local URL printed by Vite (usually `http://localhost:5173`).
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Notes
+
+- The bundled trail GeoJSON dataset is large (about 85 MB).
+- Elevation data depends on the Google Elevation API. If it is unavailable, the app may show fallback elevation values or omit the chart.
