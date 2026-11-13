@@ -1,0 +1,106 @@
+/* Reset and base */
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f2f4f8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* App layout */
+.App {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title styling */
+.App h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Controls */
+.App input[type="text"],
+.App select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.App input[type="text"] {
+  width: 45%;
+  margin-right: 1%;
+}
+
+.App select {
+  width: 25%;
+}
+
+/* Timeline trail cards */
+.trail-card {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 140px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  white-space: normal;
+  overflow: hidden;
+  background-color: #ffefc3;
+}
+
+.trail-card.easy {
+  background-color: #d0f0c0;
+}
+
+.trail-card.moderate {
+  background-color: #ffe4b5;
+}
+
+.trail-card.hard {
+  background-color: #ffcccc;
+}
+
+/* Scrollable timeline */
+.trail-timeline {
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Map styling */
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Trail detail panel */
+.trail-detail {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+}
+.elevation-graph-container {
+  height: 300px;
+}
